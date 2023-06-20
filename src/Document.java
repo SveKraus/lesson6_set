@@ -22,13 +22,6 @@ public class Document {
     public int hashCode() {
         Random r = new Random();
         return r.nextInt();//Objects.hash(number, title);
-    }
 
-    @Override
-    public String toString() {
-        return "Document{" +
-                "number=" + number +
-                ", title='" + title + '\'' +
-                '}';
     }
 }
