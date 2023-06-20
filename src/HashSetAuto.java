@@ -1,23 +1,36 @@
-import java.util.HashSet;
-import java.util.Set;
-
 public class HashSetAuto {
-    public static void main(String[] args) {
-        Set<String> set = new HashSet<>();
-        set.add("Автомобиль 1");
-        set.add("Автомобиль 2");
-        set.add("Автомобиль 3");
-        set.add("Автомобиль 4");
-        set.add("Автомобиль 5");
-        set.add("Автомобиль 6");
+    String marka;
 
-        System.out.println(set);
+    int power;
 
-        for (String s: set) {
+    String price;
 
-            System.out.println(s);
+
+
+    public HashSetAuto(int power, String price, String marka) {
+        this.marka = marka;
+        this.power = power;
+        this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+
+        if (obj instanceof HashSetAuto) {
+            HashSetAuto auto = (HashSetAuto) obj;
+            if (this.power == auto.power && this.marka.equals(auto.marka)) return true;
 
         }
+        return false;
+    }
 
+    @Override
+    public String toString() {
+        return "HashSetAuto{" +
+                "marka='" + marka + '\'' +
+                ", power=" + power +
+                ", price='" + price + '\'' +
+                '}';
     }
 }
